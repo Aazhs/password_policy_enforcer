@@ -1,5 +1,10 @@
 # Password Policy Enforcer
 
+#Made By - Aarsh Joshi
+           Darshan Bari
+           Samarth Hannure
+           Homesh Ingle
+
 A bash-based password strength checker that validates passwords against multiple security policies. Built this for a Linux systems project.
 
 ## What it does
