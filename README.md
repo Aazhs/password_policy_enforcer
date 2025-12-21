@@ -1,6 +1,6 @@
 # Password Policy Enforcer
 
-#Made By - Aarsh Joshi
+Made By -  Aarsh Joshi
            Darshan Bari
            Samarth Hannure
            Homesh Ingle
