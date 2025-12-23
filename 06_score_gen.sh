@@ -63,10 +63,10 @@ fi
 # common password dictionary check
 OUTPUT_05=$(./05_check_common.sh "$PASSWORD")
 if echo "$OUTPUT_05" | grep -q "Password is not in the common dictionary."; then
-  echo " [+] Dictionary Attack Check:    PASSED (+10 pts)"
+  echo " [+] Common Password Check:      PASSED (+10 pts)"
   SCORE=$((SCORE + 10))
 else
-  echo " [-] Dictionary Attack Check:    FAILED (+0 pts)"
+  echo " [-] Common Password Check:      FAILED (+0 pts)"
 fi
 
 echo "----------------------------------------"

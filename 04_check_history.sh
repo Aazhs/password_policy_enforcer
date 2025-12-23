@@ -10,14 +10,17 @@ if [ ! -f "$HISTORY_FILE" ]; then
   touch "$HISTORY_FILE"
 fi
 
-# check if password exists in history for this user
-# format: username:password (one per line)
-if grep -Fxq "$USERNAME:$PASSWORD" "$HISTORY_FILE"; then
+# hash the password using SHA-256
+PASSWORD_HASH=$(echo -n "$PASSWORD" | sha256sum | awk '{print $1}')
+
+# check if password hash exists in history for this user
+# format: username:password_hash (one per line)
+if grep -Fxq "$USERNAME:$PASSWORD_HASH" "$HISTORY_FILE"; then
   echo "[FAIL] You have used this password before."
 else
   echo "[PASS] Password is new."
   # automatically add to history
   # in real scenario this would happen on actual password change
-  echo "$USERNAME:$PASSWORD" >> "$HISTORY_FILE"
+  echo "$USERNAME:$PASSWORD_HASH" >> "$HISTORY_FILE"
   echo "       (Added to password history)"
 fi
