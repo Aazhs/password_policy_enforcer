@@ -21,6 +21,6 @@ if grep -q "^$USERNAME:$PASSWORD_HASH$" "$HISTORY_FILE"; then
 else
   echo "[PASS] Password is new."
   # automatically add to history
-  echo "$USERNAME:$PASSWORD_HASH" >> "$HISTORY_FILE"
+  echo "$USERNAME:$PASSWORD_HASH" >>"$HISTORY_FILE"
   echo "       (Added to password history)"
 fi
